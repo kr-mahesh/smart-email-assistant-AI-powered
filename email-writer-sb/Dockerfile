@@ -1,3 +1,6 @@
+# Base image
+FROM eclipse-temurin:17-jdk
+
 # Set working directory
 WORKDIR /app
 
@@ -10,5 +13,5 @@ RUN chmod +x ./mvnw
 # Build the project
 RUN ./mvnw package -DskipTests
 
-# Run the JAR
+# Run the JAR (adjust the name or use a wildcard if necessary)
 CMD ["java", "-jar", "target/*.jar"]
