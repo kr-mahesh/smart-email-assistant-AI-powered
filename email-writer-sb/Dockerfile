@@ -1,14 +1,14 @@
-# Use a Java runtime base image
-FROM eclipse-temurin:17-jdk
-
 # Set working directory
 WORKDIR /app
 
-# Copy Maven wrapper and project files
+# Copy everything
 COPY . .
 
-# Build the project (this will also include your React frontend in /static)
+# Make Maven wrapper executable
+RUN chmod +x ./mvnw
+
+# Build the project
 RUN ./mvnw package -DskipTests
 
-# Run the jar
+# Run the JAR
 CMD ["java", "-jar", "target/*.jar"]
