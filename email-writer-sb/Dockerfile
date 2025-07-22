@@ -1,5 +1,5 @@
 # Use a Java 17 base image
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:24-jdk
 
 # Set working directory to the Spring Boot app folder
 WORKDIR /app/email-writer-sb
